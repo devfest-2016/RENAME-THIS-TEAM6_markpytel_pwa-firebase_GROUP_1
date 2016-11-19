@@ -15,8 +15,9 @@
 		3F7671B01DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */; };
 		3F7671B41DE0A7B500B52A71 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7671B31DE0A7B500B52A71 /* MapKit.framework */; };
 		3F7671B61DE0A8C500B52A71 /* CreateCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */; };
-		3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */; };
 		C35EEF721DE0ABDC0057C059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EEF711DE0ABDC0057C059 /* LoginViewController.swift */; };
+		C35EEF741DE0BA3A0057C059 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C35EEF731DE0BA3A0057C059 /* GoogleService-Info.plist */; };
+		C35EEF761DE0C1A30057C059 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EEF751DE0C1A30057C059 /* DataStore.swift */; };
 		C36D8CA31DE0A4B0009F0E1F /* FirebaseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36D8CA21DE0A4B0009F0E1F /* FirebaseLogin.swift */; };
 		EC08A1DCDCDBAA79D68E1755 /* Pods_Crumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */; };
 /* End PBXBuildFile section */
@@ -32,9 +33,10 @@
 		3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCrumbDetailViewController.swift; sourceTree = "<group>"; };
 		3F7671B31DE0A7B500B52A71 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCrumbViewController.swift; sourceTree = "<group>"; };
-		3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		C35EEF711DE0ABDC0057C059 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C35EEF731DE0BA3A0057C059 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C35EEF751DE0C1A30057C059 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		C36D8CA11DE0A346009F0E1F /* Crumbs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crumbs-Bridging-Header.h"; sourceTree = "<group>"; };
 		C36D8CA21DE0A4B0009F0E1F /* FirebaseLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseLogin.swift; sourceTree = "<group>"; };
 		F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				3F7671B21DE0A7A000B52A71 /* Models */,
-				3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */,
 				3F7671AE1DE0A75400B52A71 /* ViewControllers */,
 				3F7671B11DE0A78F00B52A71 /* Storyboard */,
 				3F466F401DE09A0500C1545D /* Assets.xcassets */,
@@ -94,6 +95,7 @@
 				C36D8CA21DE0A4B0009F0E1F /* FirebaseLogin.swift */,
 				C36D8CA11DE0A346009F0E1F /* Crumbs-Bridging-Header.h */,
 				3F466F391DE09A0500C1545D /* AppDelegate.swift */,
+				C35EEF731DE0BA3A0057C059 /* GoogleService-Info.plist */,
 			);
 			path = Crumbs;
 			sourceTree = "<group>";
@@ -105,6 +107,7 @@
 				3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */,
 				3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */,
 				C35EEF711DE0ABDC0057C059 /* LoginViewController.swift */,
+				C35EEF751DE0C1A30057C059 /* DataStore.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -203,8 +206,8 @@
 			files = (
 				3F466F441DE09A0500C1545D /* LaunchScreen.storyboard in Resources */,
 				3F466F411DE09A0500C1545D /* Assets.xcassets in Resources */,
+				C35EEF741DE0BA3A0057C059 /* GoogleService-Info.plist in Resources */,
 				3F466F3F1DE09A0500C1545D /* Main.storyboard in Resources */,
-				3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35EEF761DE0C1A30057C059 /* DataStore.swift in Sources */,
 				C35EEF721DE0ABDC0057C059 /* LoginViewController.swift in Sources */,
 				C36D8CA31DE0A4B0009F0E1F /* FirebaseLogin.swift in Sources */,
 				3F7671AC1DE0A72400B52A71 /* CrumbsCollectionViewController.swift in Sources */,

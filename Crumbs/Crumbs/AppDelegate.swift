@@ -20,17 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         
-        func checkForLogIn() {
-            if FIRAuth.auth()?.currentUser?.uid == nil {
-                //present login view controller
-            }  else {
-                let uid = FIRAuth.auth()?.currentUser?.uid
-                //present landing page view controller
-            }
-            
-            
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            //present login view controller
+        }  else {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            //present landing page view controller
         }
-        
         
         return true
     }
