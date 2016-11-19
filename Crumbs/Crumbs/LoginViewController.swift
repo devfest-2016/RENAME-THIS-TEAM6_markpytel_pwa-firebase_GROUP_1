@@ -52,8 +52,7 @@ class LoginViewController: UIViewController {
                 
                 return
             }
-            //present next view controller
-          
+            
         })
     }
     
