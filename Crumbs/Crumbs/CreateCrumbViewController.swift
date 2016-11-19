@@ -101,7 +101,7 @@ class CreateCrumbViewController: UIViewController {
             let alertController = UIAlertController(title: nil, message: "Crumb saved", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: {
-                clearPins()
+                self.clearPins()
             })
         }
         
