@@ -12,6 +12,7 @@
 		3F466F3F1DE09A0500C1545D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F3D1DE09A0500C1545D /* Main.storyboard */; };
 		3F466F411DE09A0500C1545D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F401DE09A0500C1545D /* Assets.xcassets */; };
 		3F466F441DE09A0500C1545D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F421DE09A0500C1545D /* LaunchScreen.storyboard */; };
+		3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */; };
 		EC08A1DCDCDBAA79D68E1755 /* Pods_Crumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		3F466F401DE09A0500C1545D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F466F431DE09A0500C1545D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F466F451DE09A0500C1545D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.release.xcconfig"; sourceTree = "<group>"; };
 		FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crumbs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 		3F466F381DE09A0500C1545D /* Crumbs */ = {
 			isa = PBXGroup;
 			children = (
+				3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */,
 				3F466F391DE09A0500C1545D /* AppDelegate.swift */,
 				3F466F3B1DE09A0500C1545D /* ViewController.swift */,
 				3F466F3D1DE09A0500C1545D /* Main.storyboard */,
@@ -154,6 +157,7 @@
 				3F466F441DE09A0500C1545D /* LaunchScreen.storyboard in Resources */,
 				3F466F411DE09A0500C1545D /* Assets.xcassets in Resources */,
 				3F466F3F1DE09A0500C1545D /* Main.storyboard in Resources */,
+				3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FF14BD7BDBA873BA676DB81B /* [CP] Copy Pods Resources */ = {
@@ -377,6 +381,7 @@
 				3F466F4A1DE09A0500C1545D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
