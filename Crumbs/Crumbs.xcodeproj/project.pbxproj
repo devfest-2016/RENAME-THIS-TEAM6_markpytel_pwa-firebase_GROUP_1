@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3F466F3A1DE09A0500C1545D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F466F391DE09A0500C1545D /* AppDelegate.swift */; };
-		3F466F3C1DE09A0500C1545D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F466F3B1DE09A0500C1545D /* ViewController.swift */; };
 		3F466F3F1DE09A0500C1545D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F3D1DE09A0500C1545D /* Main.storyboard */; };
 		3F466F411DE09A0500C1545D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F401DE09A0500C1545D /* Assets.xcassets */; };
 		3F466F441DE09A0500C1545D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F421DE09A0500C1545D /* LaunchScreen.storyboard */; };
+		3F7671AC1DE0A72400B52A71 /* CrumbsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7671AB1DE0A72400B52A71 /* CrumbsCollectionViewController.swift */; };
+		3F7671B01DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */; };
+		3F7671B41DE0A7B500B52A71 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7671B31DE0A7B500B52A71 /* MapKit.framework */; };
+		3F7671B61DE0A8C500B52A71 /* CreateCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */; };
 		3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */; };
 		EC08A1DCDCDBAA79D68E1755 /* Pods_Crumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */; };
 /* End PBXBuildFile section */
@@ -19,11 +22,14 @@
 /* Begin PBXFileReference section */
 		3F466F361DE09A0500C1545D /* Crumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F466F391DE09A0500C1545D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F466F3B1DE09A0500C1545D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F466F3E1DE09A0500C1545D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F466F401DE09A0500C1545D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F466F431DE09A0500C1545D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F466F451DE09A0500C1545D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7671AB1DE0A72400B52A71 /* CrumbsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbsCollectionViewController.swift; sourceTree = "<group>"; };
+		3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCrumbDetailViewController.swift; sourceTree = "<group>"; };
+		3F7671B31DE0A7B500B52A71 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCrumbViewController.swift; sourceTree = "<group>"; };
 		3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7671B41DE0A7B500B52A71 /* MapKit.framework in Frameworks */,
 				EC08A1DCDCDBAA79D68E1755 /* Pods_Crumbs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +52,7 @@
 		2CB850E2FC9CA467C0993B8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F7671B31DE0A7B500B52A71 /* MapKit.framework */,
 				FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */,
 			);
 			name = Frameworks;
@@ -71,15 +79,41 @@
 		3F466F381DE09A0500C1545D /* Crumbs */ = {
 			isa = PBXGroup;
 			children = (
+				3F7671B21DE0A7A000B52A71 /* Models */,
 				3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */,
 				3F466F391DE09A0500C1545D /* AppDelegate.swift */,
-				3F466F3B1DE09A0500C1545D /* ViewController.swift */,
-				3F466F3D1DE09A0500C1545D /* Main.storyboard */,
+				3F7671AE1DE0A75400B52A71 /* ViewControllers */,
+				3F7671B11DE0A78F00B52A71 /* Storyboard */,
 				3F466F401DE09A0500C1545D /* Assets.xcassets */,
 				3F466F421DE09A0500C1545D /* LaunchScreen.storyboard */,
 				3F466F451DE09A0500C1545D /* Info.plist */,
 			);
 			path = Crumbs;
+			sourceTree = "<group>";
+		};
+		3F7671AE1DE0A75400B52A71 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F7671AB1DE0A72400B52A71 /* CrumbsCollectionViewController.swift */,
+				3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */,
+				3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3F7671B11DE0A78F00B52A71 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3F466F3D1DE09A0500C1545D /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		3F7671B21DE0A7A000B52A71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		A07DFD085DF9B8EC85C675A7 /* Pods */ = {
@@ -128,6 +162,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = H2562XJSGY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -216,7 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F466F3C1DE09A0500C1545D /* ViewController.swift in Sources */,
+				3F7671AC1DE0A72400B52A71 /* CrumbsCollectionViewController.swift in Sources */,
+				3F7671B01DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift in Sources */,
+				3F7671B61DE0A8C500B52A71 /* CreateCrumbViewController.swift in Sources */,
 				3F466F3A1DE09A0500C1545D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
