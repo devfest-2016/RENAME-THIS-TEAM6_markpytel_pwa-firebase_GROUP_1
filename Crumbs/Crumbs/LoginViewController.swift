@@ -52,12 +52,14 @@ class LoginViewController: UIViewController {
                 print("Sign in error... \(error?.localizedDescription)")
                 return
             }
+
             if let currentUserUid = FIRAuth.auth()?.currentUser?.uid{
                 print("UID exists, value = \(currentUserUid)")
                 self.store.uid = currentUserUid
             }
             self.performSegue(withIdentifier: "createAccount", sender: self)
           
+
         })
     }
     
