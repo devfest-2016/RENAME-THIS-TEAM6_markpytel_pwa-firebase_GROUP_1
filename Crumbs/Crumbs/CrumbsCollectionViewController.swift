@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 private let reuseIdentifier = "Cell"
 
 class CrumbsCollectionViewController: UICollectionViewController {
+    
+    fileprivate let reuseIdentifier = "crumbCell"
+    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    fileprivate let itemsPerRow: CGFloat = 2
+    
+    let ref = FIRDatabase.database().reference(withPath: "crumbs")
+    var crumbs: [Crumb] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +50,12 @@ class CrumbsCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return self.crumbs
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
