@@ -44,24 +44,6 @@ class FirebaseLogin {
         })
     }
     
-    func handleSignIn() {
-        let email = "emailPlaceholder"
-        let password = "passwordPlaceholder"
-        let name = "namePlaceholder"
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                print("user couldn't sign in \(error)")
-                return
-            }
-            //present next view controller
-            print("user signed in")
-            
-        })
-        
-        
-    }
-    
     
     
     
