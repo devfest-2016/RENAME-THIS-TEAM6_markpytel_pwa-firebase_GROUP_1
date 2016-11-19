@@ -15,21 +15,21 @@ class CreateCrumbViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    let store = DataStore.sharedInstance
+    
     var locationManager: CLLocationManager!
     var placeInLineCounter = 1
     var locationList: [Location] = []
     var mapItemList: [MKMapItem] = []
     var city = ""
     var crumbKey = ""
-    let fakeUserIdKey = "sdkjf812ASFD"
-
     
     let locationsRef = FIRDatabase.database().reference(withPath: "locations")
     let crumbsRef = FIRDatabase.database().reference(withPath: "crumbs")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         placeInLineCounter = 1
         initGestures()
         setupLocationManager()
@@ -78,7 +78,7 @@ class CreateCrumbViewController: UIViewController {
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             guard let textField = saveAlert.textFields?.first, let text = textField.text else { return }
-            let crumb = Crumb(name: text, userKey: self.fakeUserIdKey, city: self.city)
+            let crumb = Crumb(name: text, userKey: self.store.uid, city: self.city)
             let childCrumbsRef = self.crumbsRef.childByAutoId()
             self.crumbKey = childCrumbsRef.key
             childCrumbsRef.setValue(crumb.toAnyObject())

@@ -13,11 +13,13 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let store = DataStore.sharedInstance
+    
     @IBAction func loginButton(_ sender: Any) {
-        handleSignIn()
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        handleSignIn(email: email, password: password)
     }
     
     @IBAction func createAccountButton(_ sender: Any) {
@@ -43,16 +45,18 @@ class LoginViewController: UIViewController {
     
 
 
-    func handleSignIn() {
-        
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+    func handleSignIn(email: String, password: String) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                
+                print("Sign in error... \(error?.localizedDescription)")
                 return
             }
-            //present next view controller
+            if let currentUserUid = FIRAuth.auth()?.currentUser?.uid{
+                print("UID exists, value = \(currentUserUid)")
+                self.store.uid = currentUserUid
+            }
+            self.performSegue(withIdentifier: "createAccount", sender: self)
           
         })
     }
@@ -78,6 +82,7 @@ class LoginViewController: UIViewController {
                     //print("uid failed")
                     return
                 }
+            
                 //print("right before database")
                 let ref = FIRDatabase.database().reference(withPath: "user")
                 let user = ref.child(uid)
@@ -88,10 +93,8 @@ class LoginViewController: UIViewController {
                         return
                     }
                     //print("User ID inside of handleRegister is == \(FIRAuth.auth()?.currentUser?.uid)")
-                    self.signInUser(email: email, password: password)
-                    OperationQueue.main.addOperation {
-                        self.performSegue(withIdentifier: "createAccount", sender: self)
-                    }
+                    self.handleSignIn(email: email, password: password)
+
                 })
             })
             print(password)
@@ -124,6 +127,7 @@ class LoginViewController: UIViewController {
                 //print("user couldn't login \(error)")
                 return
             }
+
             //print("user signed in")
         })
     }

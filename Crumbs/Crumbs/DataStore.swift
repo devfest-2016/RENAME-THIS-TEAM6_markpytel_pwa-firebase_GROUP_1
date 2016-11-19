@@ -9,7 +9,7 @@
 import Foundation
 
 class DataStore {
-    var uid: Int!
+    var uid: String!
     static let sharedInstance = DataStore()
     private init() {}
 
