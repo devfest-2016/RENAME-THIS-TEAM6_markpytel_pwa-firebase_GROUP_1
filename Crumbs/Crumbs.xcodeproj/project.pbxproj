@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				3F7671AB1DE0A72400B52A71 /* CrumbsCollectionViewController.swift */,
-				3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */,
 				3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */,
+				3F7671AF1DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

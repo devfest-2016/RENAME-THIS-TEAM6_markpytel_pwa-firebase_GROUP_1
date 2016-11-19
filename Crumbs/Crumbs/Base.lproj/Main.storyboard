@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -144,7 +145,7 @@
         <scene sceneID="pCu-al-4JC">
             <objects>
                 <collectionViewController id="LN1-4v-9NZ" customClass="CrumbsCollectionViewController" customModule="Crumbs" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="NGY-Cg-Ync">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NGY-Cg-Ync">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,7 +157,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="crumbCell" id="KhJ-q6-9E6" customClass="CrumbCell" customModule="Crumbs" customModuleProvider="target">
-                                <rect key="frame" x="71.5" y="0.0" width="232" height="205"/>
+                                <rect key="frame" x="72" y="0.0" width="232" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="232" height="205"/>
@@ -216,9 +217,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9y4-KN-43a">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9y4-KN-43a">
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MuQ-Vr-x5P">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="ElT-LQ-VFF">
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="SAVE" id="283-KU-k9f">
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="uEx-SX-aRB" id="TMD-c5-82x"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="ROUTE" id="zXG-K6-rj4">
+                                                <connections>
+                                                    <action selector="routeButtonTapped:" destination="uEx-SX-aRB" id="IGW-tc-8pl"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="trash" id="Fsw-1a-MiQ">
+                                                <connections>
+                                                    <action selector="trashButtonTapped:" destination="uEx-SX-aRB" id="mGJ-hP-yEx"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -229,6 +255,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" id="Daq-Ss-xRd"/>
+                    <connections>
+                        <outlet property="mapView" destination="9y4-KN-43a" id="EmZ-SF-5at"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzA-2d-vGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

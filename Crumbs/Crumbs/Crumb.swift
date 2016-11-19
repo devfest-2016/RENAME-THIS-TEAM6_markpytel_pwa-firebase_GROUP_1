@@ -12,7 +12,6 @@ import FirebaseDatabase
 struct Crumb {
     
     var key: String
-    var crumbKey: String
     var userKey: String
     var name: String
     var city: String
@@ -20,10 +19,9 @@ struct Crumb {
     //var locations: [Location] = []
     let ref: FIRDatabaseReference?
     
-    init(name: String, key: String = "", crumbKey: String, userKey: String, city: String) {
+    init(name: String, key: String = "", userKey: String, city: String) {
         self.key = key
         self.name = name
-        self.crumbKey = crumbKey
         self.userKey = userKey
         self.city = city
         self.ref = nil
@@ -33,7 +31,6 @@ struct Crumb {
         key = snapshot.key
         let snapshotValue = snapshot.value as! [String: AnyObject]
         self.name = snapshotValue["name"] as! String
-        self.crumbKey = snapshotValue["crumbKey"] as! String
         self.userKey = snapshotValue["userKey"] as! String
         if let unwrappedCityName = snapshotValue["city"] {
             self.city =  unwrappedCityName as! String
@@ -48,7 +45,6 @@ struct Crumb {
     func toAnyObject() -> Any {
         return [
             "name": name,
-            "crumbKey": crumbKey,
             "userKey": userKey,
             "city": city
             //"rating": rating!
