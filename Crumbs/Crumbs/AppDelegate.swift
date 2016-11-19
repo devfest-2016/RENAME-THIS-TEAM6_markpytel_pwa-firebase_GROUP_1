@@ -18,6 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
+        
+        
+        func checkForLogIn() {
+            if FIRAuth.auth()?.currentUser?.uid == nil {
+                //present login view controller
+            }  else {
+                //present landing page view controller
+            }
+            
+            
+        }
+        
+        
         return true
     }
 

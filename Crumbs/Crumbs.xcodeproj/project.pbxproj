@@ -13,6 +13,7 @@
 		3F466F411DE09A0500C1545D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F401DE09A0500C1545D /* Assets.xcassets */; };
 		3F466F441DE09A0500C1545D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F466F421DE09A0500C1545D /* LaunchScreen.storyboard */; };
 		3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */; };
+		C36D8CA31DE0A4B0009F0E1F /* FirebaseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36D8CA21DE0A4B0009F0E1F /* FirebaseLogin.swift */; };
 		EC08A1DCDCDBAA79D68E1755 /* Pods_Crumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 		3F466F451DE09A0500C1545D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
+		C36D8CA11DE0A346009F0E1F /* Crumbs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crumbs-Bridging-Header.h"; sourceTree = "<group>"; };
+		C36D8CA21DE0A4B0009F0E1F /* FirebaseLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseLogin.swift; sourceTree = "<group>"; };
 		F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.release.xcconfig"; sourceTree = "<group>"; };
 		FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crumbs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,10 +77,12 @@
 				3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */,
 				3F466F391DE09A0500C1545D /* AppDelegate.swift */,
 				3F466F3B1DE09A0500C1545D /* ViewController.swift */,
+				C36D8CA11DE0A346009F0E1F /* Crumbs-Bridging-Header.h */,
 				3F466F3D1DE09A0500C1545D /* Main.storyboard */,
 				3F466F401DE09A0500C1545D /* Assets.xcassets */,
 				3F466F421DE09A0500C1545D /* LaunchScreen.storyboard */,
 				3F466F451DE09A0500C1545D /* Info.plist */,
+				C36D8CA21DE0A4B0009F0E1F /* FirebaseLogin.swift */,
 			);
 			path = Crumbs;
 			sourceTree = "<group>";
@@ -126,7 +131,7 @@
 				TargetAttributes = {
 					3F466F351DE09A0500C1545D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = H2562XJSGY;
+						DevelopmentTeam = 79TR88QV2P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -191,7 +196,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FF14BD7BDBA873BA676DB81B /* [CP] Copy Pods Resources */ = {
@@ -216,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36D8CA31DE0A4B0009F0E1F /* FirebaseLogin.swift in Sources */,
 				3F466F3C1DE09A0500C1545D /* ViewController.swift in Sources */,
 				3F466F3A1DE09A0500C1545D /* AppDelegate.swift in Sources */,
 			);
@@ -339,11 +345,12 @@
 			baseConfigurationReference = 624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H2562XJSGY;
+				DEVELOPMENT_TEAM = 79TR88QV2P;
 				INFOPLIST_FILE = Crumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NY3Apps.Crumbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crumbs/Crumbs-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -353,11 +360,12 @@
 			baseConfigurationReference = F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H2562XJSGY;
+				DEVELOPMENT_TEAM = 79TR88QV2P;
 				INFOPLIST_FILE = Crumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NY3Apps.Crumbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crumbs/Crumbs-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
