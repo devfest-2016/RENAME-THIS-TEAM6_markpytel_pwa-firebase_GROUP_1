@@ -249,6 +249,11 @@
                                                     <action selector="trashButtonTapped:" destination="uEx-SX-aRB" id="mGJ-hP-yEx"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem systemItem="search" id="NV0-fz-V1z">
+                                                <connections>
+                                                    <action selector="showSearchBar:" destination="uEx-SX-aRB" id="7dZ-V5-fJD"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>

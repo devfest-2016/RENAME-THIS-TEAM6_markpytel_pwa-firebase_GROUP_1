@@ -24,6 +24,14 @@ class CreateCrumbViewController: UIViewController {
     var city = ""
     var crumbKey = ""
     
+    var searchController: UISearchController!
+    var localSearchRequest: MKLocalSearchRequest!
+    var localSearch: MKLocalSearch!
+    var localSearchResponse: MKLocalSearchResponse!
+    var error: NSError!
+    var pointAnnotation: MKPointAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
+    
     let locationsRef = FIRDatabase.database().reference(withPath: "locations")
     let crumbsRef = FIRDatabase.database().reference(withPath: "crumbs")
     
@@ -274,4 +282,49 @@ extension CreateCrumbViewController {
         mapView.addGestureRecognizer(longPressMapGesture)
     }
 
+}
+
+// MARK: - Search methods
+
+
+
+extension CreateCrumbViewController: UISearchBarDelegate {
+    
+    @IBAction func showSearchBar(_ sender: AnyObject) {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        //1
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        //2
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchBar.text
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.start { (localSearchResponse, error) -> Void in
+            
+            if localSearchResponse == nil{
+                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            //3
+            self.pointAnnotation = MKPointAnnotation()
+            self.pointAnnotation.title = searchBar.text
+            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
+            
+            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
+            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
+            
+            let placemark = MKPlacemark(coordinate: self.pointAnnotation.coordinate)
+            self.mapItemList.append(MKMapItem(placemark: placemark))
+            self.saveLocationToList(annotation: self.pointAnnotation)
+        }
+    }
 }
