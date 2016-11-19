@@ -97,6 +97,12 @@ class CreateCrumbViewController: UIViewController {
                 let childLocationRef = self.locationsRef.childByAutoId()
                 childLocationRef.setValue(self.locationList[index].toAnyObject())
             }
+            
+            let alertController = UIAlertController(title: nil, message: "Crumb saved", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: {
+                clearPins()
+            })
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -286,8 +292,6 @@ extension CreateCrumbViewController {
 
 // MARK: - Search methods
 
-
-
 extension CreateCrumbViewController: UISearchBarDelegate {
     
     @IBAction func showSearchBar(_ sender: AnyObject) {
@@ -298,22 +302,22 @@ extension CreateCrumbViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        //1
+        
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
-        //2
+        
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchBar.text
         localSearch = MKLocalSearch(request: localSearchRequest)
         localSearch.start { (localSearchResponse, error) -> Void in
             
-            if localSearchResponse == nil{
+            if localSearchResponse == nil {
                 let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            //3
+            
             self.pointAnnotation = MKPointAnnotation()
             self.pointAnnotation.title = searchBar.text
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
