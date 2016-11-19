@@ -27,12 +27,15 @@ class ShowCrumbDetailViewController: UIViewController, MKMapViewDelegate {
         queryForLocations {
             self.convertLocationsToMapItem()
             self.addAnnotationsToMap()
+            if self.mapItemList.count > 1 {
+                //activityIndicator.startAnimating()
+                self.calculateSegmentDirections(index: 0, time: 0, routes: [])
+            }
         }
         
     }
     
     //From CrumbsCollectionController get crumbKey, only identified by key. Then search through that,
-    
     
     func queryForLocations(completion: @escaping () -> Void) {
         print("\(crumbDelegate) crumbKey =====")
@@ -47,9 +50,7 @@ class ShowCrumbDetailViewController: UIViewController, MKMapViewDelegate {
             }
             self.locations = newLocations
             completion()
-            
         })
-        
         
     }
     
@@ -77,5 +78,86 @@ class ShowCrumbDetailViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(annotations)
     }
    
+}
 
+extension ShowCrumbDetailViewController {
+    
+    func calculateSegmentDirections(index: Int, time: TimeInterval, routes: [MKRoute]) {
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        request.source = mapItemList[index]
+        request.destination = mapItemList[index+1]
+        request.requestsAlternateRoutes = true
+        request.transportType = .walking
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { (response, error) in
+            if let routeResponse = response?.routes {
+                let quickestRouteForSegment: MKRoute = routeResponse.sorted(by: {$0.expectedTravelTime < $1.expectedTravelTime})[0]
+                
+                var timeVar = time
+                var routesVar = routes
+                
+                routesVar.append(quickestRouteForSegment)
+                timeVar += quickestRouteForSegment.expectedTravelTime
+                
+                if index+2 < self.mapItemList.count {
+                    self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routesVar)
+                }
+                else {
+                    //self.activityIndicator.stopAnimating()
+                    self.showRoute(routes: routesVar)
+                }
+            }
+            else if let _ = error{
+                let alert = UIAlertController(title: nil,
+                                              message: "Directions not available.", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(okButton)
+                self.present(alert, animated: true,
+                             completion: nil)
+            }
+        }
+        
+    }
+    
+    func showRoute(routes: [MKRoute]) {
+        for i in 0..<routes.count {
+            print("plotting route # \(i)")
+            plotPolyline(route: routes[i])
+        }
+    }
+    
+    func plotPolyline(route: MKRoute) {
+        mapView.add(route.polyline)
+        if mapView.overlays.count == 1 {
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect,
+                                      edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0),
+                                      animated: false)
+        }
+        else {
+            let polylineBoundingRect =  MKMapRectUnion(mapView.visibleMapRect,
+                                                       route.polyline.boundingMapRect)
+            mapView.setVisibleMapRect(polylineBoundingRect,
+                                      edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0),
+                                      animated: false)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+        if (overlay is MKPolyline) {
+            if mapView.overlays.count == 1 {
+                polylineRenderer.strokeColor =
+                    UIColor.blue.withAlphaComponent(0.75)
+            } else if mapView.overlays.count == 2 {
+                polylineRenderer.strokeColor =
+                    UIColor.green.withAlphaComponent(0.75)
+            } else if mapView.overlays.count == 3 {
+                polylineRenderer.strokeColor =
+                    UIColor.red.withAlphaComponent(0.75)
+            }
+            polylineRenderer.lineWidth = 5
+        }
+        return polylineRenderer
+    }
 }
