@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="3082" y="-715"/>
         </scene>
-        <!--Item-->
+        <!--Crumbs-->
         <scene sceneID="pCu-al-4JC">
             <objects>
                 <collectionViewController id="LN1-4v-9NZ" customClass="CrumbsCollectionViewController" customModule="Crumbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,13 +172,13 @@
                             <outlet property="delegate" destination="LN1-4v-9NZ" id="DyD-FC-UId"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="4lO-Qs-fwc"/>
+                    <tabBarItem key="tabBarItem" title="Crumbs" id="4lO-Qs-fwc"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB5-vF-Jdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2213.5999999999999" y="26.53673163418291"/>
         </scene>
-        <!--Item-->
+        <!--Create-->
         <scene sceneID="RzJ-Tf-Ouk">
             <objects>
                 <viewController id="uEx-SX-aRB" customClass="CreateCrumbViewController" customModule="Crumbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -202,7 +202,7 @@
                             <constraint firstItem="9y4-KN-43a" firstAttribute="top" secondItem="HKP-MS-GsM" secondAttribute="bottom" id="Ofj-6W-jhQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Daq-Ss-xRd"/>
+                    <tabBarItem key="tabBarItem" title="Create" id="Daq-Ss-xRd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzA-2d-vGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
