@@ -9,11 +9,10 @@
 import UIKit
 import FirebaseDatabase
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "crumbCell"
 
 class CrumbsCollectionViewController: UICollectionViewController {
     
-    fileprivate let reuseIdentifier = "crumbCell"
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     fileprivate let itemsPerRow: CGFloat = 1
     
@@ -31,21 +30,36 @@ class CrumbsCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ref.observe(.value, with: { snapshot in
+            var newCrumbs: [Crumb] = []
+            //print(snapshot.value)
+            for item in snapshot.children {
+                let crumb = Crumb(snapshot: item as! FIRDataSnapshot)
+                newCrumbs.append(crumb)
+            }
+            self.crumbs = newCrumbs
+            self.collectionView?.reloadData()
+        })
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showCrumbDetail" {
+            let dest = segue.destination as! ShowCrumbDetailViewController
+            if let cell = sender as? UICollectionViewCell, let indexPath = collectionView?.indexPath(for: cell) {
+                //dest.crumbKey = crumbs[indexPath.row].crumbKey
+            }
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -59,11 +73,13 @@ class CrumbsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)) as! CrumbCell
-        cell.name.text = crumbs[indexPath.row].name
-        cell.cityLabel.text = crumbs[indexPath.row].city
+        cell.crumbNameLabel.text = crumbs[indexPath.row].name
+        cell.crumbCityLabel.text = crumbs[indexPath.row].city
         cell.backgroundColor = UIColor.cyan
         return cell
+        
     }
 
     // MARK: UICollectionViewDelegate

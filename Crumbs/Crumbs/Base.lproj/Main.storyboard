@@ -155,7 +155,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KhJ-q6-9E6" customClass="CrumbCollectionViewCell" customModule="Crumbs" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="crumbCell" id="KhJ-q6-9E6" customClass="CrumbCell" customModule="Crumbs" customModuleProvider="target">
                                 <rect key="frame" x="71.5" y="0.0" width="232" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -187,6 +187,8 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="kbj-NA-mWH" secondAttribute="bottom" id="o5G-Ia-SK9"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="crumbCityLabel" destination="kbj-NA-mWH" id="fud-KM-WCV"/>
+                                    <outlet property="crumbNameLabel" destination="EPp-Vy-MRN" id="IA1-qB-Mvx"/>
                                     <segue destination="0kf-mL-9zh" kind="show" id="us3-so-rLf"/>
                                 </connections>
                             </collectionViewCell>
@@ -200,7 +202,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB5-vF-Jdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213.5999999999999" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2140" y="27"/>
         </scene>
         <!--Create-->
         <scene sceneID="RzJ-Tf-Ouk">

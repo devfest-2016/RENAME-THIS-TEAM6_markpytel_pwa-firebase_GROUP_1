@@ -10,4 +10,7 @@ import UIKit
 
 class CrumbCell: UICollectionViewCell {
     
+    @IBOutlet weak var crumbNameLabel: UILabel!
+    @IBOutlet weak var crumbCityLabel: UILabel!
+    
 }
