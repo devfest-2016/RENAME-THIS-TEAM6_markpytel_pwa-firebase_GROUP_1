@@ -17,6 +17,7 @@
 		3F7671B61DE0A8C500B52A71 /* CreateCrumbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */; };
 		3F895EE41DE09C93008CB5E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */; };
 		3F8DD2FC1DE0AF1C00EE2C6E /* Crumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DD2FB1DE0AF1C00EE2C6E /* Crumb.swift */; };
+		3F8DD2FE1DE0AF6A00EE2C6E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DD2FD1DE0AF6A00EE2C6E /* Location.swift */; };
 		EC08A1DCDCDBAA79D68E1755 /* Pods_Crumbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		3F7671B51DE0A8C500B52A71 /* CreateCrumbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCrumbViewController.swift; sourceTree = "<group>"; };
 		3F895EE31DE09C93008CB5E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F8DD2FB1DE0AF1C00EE2C6E /* Crumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crumb.swift; sourceTree = "<group>"; };
+		3F8DD2FD1DE0AF6A00EE2C6E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.release.xcconfig"; sourceTree = "<group>"; };
 		FDF10D917977A3A5EE2EBC26 /* Pods_Crumbs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crumbs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				3F8DD2FB1DE0AF1C00EE2C6E /* Crumb.swift */,
+				3F8DD2FD1DE0AF6A00EE2C6E /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8DD2FE1DE0AF6A00EE2C6E /* Location.swift in Sources */,
 				3F8DD2FC1DE0AF1C00EE2C6E /* Crumb.swift in Sources */,
 				3F7671AC1DE0A72400B52A71 /* CrumbsCollectionViewController.swift in Sources */,
 				3F7671B01DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift in Sources */,
