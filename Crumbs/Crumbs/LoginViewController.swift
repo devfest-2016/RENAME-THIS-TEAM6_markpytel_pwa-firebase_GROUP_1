@@ -44,21 +44,21 @@ class LoginViewController: UIViewController {
 
 
     func handleSignIn() {
-        print("handle sign in called")
+        
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                print("user couldn't sign in \(error)")
+                
                 return
             }
             //present next view controller
-            print("user signed in")
+          
         })
     }
     
     func createAccountButtonTapped() {
-        print("createAccountButton called")
+    
         let createAccountController = UIAlertController(title: "Create Crumb Account", message: "Create Account", preferredStyle: .alert)
         
         let createAccountAction = UIAlertAction(title: "Create", style: .default) { _ in
@@ -69,25 +69,25 @@ class LoginViewController: UIViewController {
             guard let email = emailField.text else { return }
             guard let name = nameField.text else { return }
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                print("inside create user")
+                //print("inside create user")
                 if error != nil {
-                    print("authorization failed \(error)")
+                    //print("authorization failed \(error)")
                     return
                 }
                 guard let uid = user?.uid else {
-                    print("uid failed")
+                    //print("uid failed")
                     return
                 }
-                print("right before database")
+                //print("right before database")
                 let ref = FIRDatabase.database().reference(withPath: "user")
                 let user = ref.child(uid)
                 let value = ["name": name, "email": email]
                 user.updateChildValues(value, withCompletionBlock: { (error, ref) in
                     if error != nil {
-                        print("error updating child values \(error)")
+                        //print("error updating child values \(error)")
                         return
                     }
-                    print("User ID inside of handleRegister is == \(FIRAuth.auth()?.currentUser?.uid)")
+                    //print("User ID inside of handleRegister is == \(FIRAuth.auth()?.currentUser?.uid)")
                     self.signInUser(email: email, password: password)
                     OperationQueue.main.addOperation {
                         self.performSegue(withIdentifier: "createAccount", sender: self)
@@ -121,10 +121,10 @@ class LoginViewController: UIViewController {
     func signInUser(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                print("user couldn't login \(error)")
+                //print("user couldn't login \(error)")
                 return
             }
-            print("user signed in")
+            //print("user signed in")
         })
     }
     
