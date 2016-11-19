@@ -24,17 +24,12 @@ class CrumbsCollectionViewController: UICollectionViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(CrumbCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         ref.observe(.value, with: { snapshot in
             var newCrumbs: [Crumb] = []
-            //print(snapshot.value)
+            print(snapshot.value)
             for item in snapshot.children {
                 let crumb = Crumb(snapshot: item as! FIRDataSnapshot)
                 newCrumbs.append(crumb)
@@ -75,8 +70,8 @@ class CrumbsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)) as! CrumbCell
-        //cell.crumbNameLabel.text = crumbs[indexPath.row].name
-        //cell.crumbCityLabel.text = crumbs[indexPath.row].city
+        cell.crumbNameLabel.text = crumbs[indexPath.row].name
+        cell.crumbCityLabel.text = crumbs[indexPath.row].city
         cell.backgroundColor = UIColor.cyan
         return cell
         
