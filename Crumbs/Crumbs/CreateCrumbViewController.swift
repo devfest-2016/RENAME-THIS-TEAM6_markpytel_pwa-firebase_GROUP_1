@@ -168,7 +168,6 @@ extension CreateCrumbViewController: MKMapViewDelegate {
                     else {
                         annotation.title = "Info not available"
                     }
-                    annotation.title = pm.thoroughfare! + ", " + pm.subThoroughfare!
                     annotation.subtitle = pm.subLocality
                     if let city = pm.locality {
                         self.city = city
