@@ -12,5 +12,5 @@ class DataStore {
     var uid: Int!
     static let sharedInstance = DataStore()
     private init() {}
-    
+
 }
