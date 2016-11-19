@@ -26,7 +26,7 @@ class CrumbsCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(CrumbCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -75,8 +75,8 @@ class CrumbsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)) as! CrumbCell
-        cell.crumbNameLabel.text = crumbs[indexPath.row].name
-        cell.crumbCityLabel.text = crumbs[indexPath.row].city
+        //cell.crumbNameLabel.text = crumbs[indexPath.row].name
+        //cell.crumbCityLabel.text = crumbs[indexPath.row].city
         cell.backgroundColor = UIColor.cyan
         return cell
         
