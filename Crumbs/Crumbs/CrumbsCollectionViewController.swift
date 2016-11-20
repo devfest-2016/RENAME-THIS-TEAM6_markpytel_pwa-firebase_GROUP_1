@@ -18,10 +18,10 @@ class CrumbsCollectionViewController: UICollectionViewController {
     
     let ref = FIRDatabase.database().reference(withPath: "crumbs")
     var crumbs: [Crumb] = []
-    let cityImageDict: [String: UIImage] = ["New York": UIImage(named: "New york")!,
-                                            "Manchester": UIImage(named: "Manchester")!,
-                                            "San Francisco": UIImage(named: "san francisco")!,
-                                            "Seoul": UIImage(named: "Seoul")!,
+    let cityImageDict: [String: UIImage] = ["New York": UIImage(named: "nyc")!,
+                                            "Salford": UIImage(named: "manchester")!,
+                                            "San Francisco": UIImage(named: "sf")!,
+                                            "Seoul": UIImage(named: "seoul")!,
                                             "Shanghai": UIImage(named: "shanghai")!]
 
     override func viewDidLoad() {
@@ -76,8 +76,12 @@ class CrumbsCollectionViewController: UICollectionViewController {
         cell.crumbNameLabel.text = crumbs[indexPath.row].name
         let cityName = crumbs[indexPath.row].city
         cell.crumbCityLabel.text = cityName
-        cell.cityImage.image = cityImageDict[cityName]
-        cell.backgroundColor = UIColor.cyan
+        cell.buttonStackView.isHidden = true
+        let imageView = UIImageView(image: cityImageDict[cityName]!)
+        imageView.contentMode = .scaleAspectFit
+        cell.backgroundView = imageView
+//        cell.cityImage.image = cityImageDict[cityName]
+//        cell.backgroundColor = UIColor.cyan
         return cell
         
     }

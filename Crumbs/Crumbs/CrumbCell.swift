@@ -15,4 +15,5 @@ class CrumbCell: UICollectionViewCell {
     
     @IBOutlet weak var cityImage: UIImageView!
     
+    @IBOutlet weak var buttonStackView: UIStackView!
 }
