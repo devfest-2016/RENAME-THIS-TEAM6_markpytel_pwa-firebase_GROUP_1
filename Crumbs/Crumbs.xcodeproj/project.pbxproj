@@ -19,6 +19,8 @@
 		3F8DD3001DE0B27400EE2C6E /* CrumbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DD2FF1DE0B27400EE2C6E /* CrumbCell.swift */; };
 		3FDC1EF51DE11D540073271A /* CustomAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC1EF41DE11D540073271A /* CustomAnnotationView.xib */; };
 		3FDC1EF71DE120F80073271A /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC1EF61DE120F80073271A /* CustomAnnotationView.swift */; };
+		3FDC1EFA1DE12BE10073271A /* PlacesAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC1EF91DE12BE10073271A /* PlacesAnnotation.swift */; };
+		3FDC1EFC1DE12D7F0073271A /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC1EFB1DE12D7F0073271A /* AnnotationView.swift */; };
 		90F660CF1DE0DC0400981B8A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F660CE1DE0DC0400981B8A /* SearchViewController.swift */; };
 		C32B15711DE0DF130056513D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32B15701DE0DF130056513D /* Main.storyboard */; };
 		C35EEF721DE0ABDC0057C059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EEF711DE0ABDC0057C059 /* LoginViewController.swift */; };
@@ -43,6 +45,8 @@
 		3F8DD2FF1DE0B27400EE2C6E /* CrumbCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbCell.swift; sourceTree = "<group>"; };
 		3FDC1EF41DE11D540073271A /* CustomAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAnnotationView.xib; sourceTree = "<group>"; };
 		3FDC1EF61DE120F80073271A /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		3FDC1EF91DE12BE10073271A /* PlacesAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesAnnotation.swift; sourceTree = "<group>"; };
+		3FDC1EFB1DE12D7F0073271A /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		90F660CE1DE0DC0400981B8A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C32B15701DE0DF130056513D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		3F466F381DE09A0500C1545D /* Crumbs */ = {
 			isa = PBXGroup;
 			children = (
+				3FDC1EF81DE12BCA0073271A /* Views */,
 				3FDC1EF11DE11C9E0073271A /* CustomCallout */,
 				3F8DD2FF1DE0B27400EE2C6E /* CrumbCell.swift */,
 				3F7671B21DE0A7A000B52A71 /* Models */,
@@ -110,6 +115,7 @@
 				C36D8CA11DE0A346009F0E1F /* Crumbs-Bridging-Header.h */,
 				3F466F391DE09A0500C1545D /* AppDelegate.swift */,
 				C35EEF731DE0BA3A0057C059 /* GoogleService-Info.plist */,
+				3FDC1EFB1DE12D7F0073271A /* AnnotationView.swift */,
 			);
 			path = Crumbs;
 			sourceTree = "<group>";
@@ -151,6 +157,14 @@
 				3FDC1EF61DE120F80073271A /* CustomAnnotationView.swift */,
 			);
 			name = CustomCallout;
+			sourceTree = "<group>";
+		};
+		3FDC1EF81DE12BCA0073271A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC1EF91DE12BE10073271A /* PlacesAnnotation.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		A07DFD085DF9B8EC85C675A7 /* Pods */ = {
@@ -296,9 +310,11 @@
 				3F8DD2FE1DE0AF6A00EE2C6E /* Location.swift in Sources */,
 				90F660CF1DE0DC0400981B8A /* SearchViewController.swift in Sources */,
 				3F8DD2FC1DE0AF1C00EE2C6E /* Crumb.swift in Sources */,
+				3FDC1EFC1DE12D7F0073271A /* AnnotationView.swift in Sources */,
 				C35EEF761DE0C1A30057C059 /* DataStore.swift in Sources */,
 				C35EEF721DE0ABDC0057C059 /* LoginViewController.swift in Sources */,
 				C36D8CA31DE0A4B0009F0E1F /* FirebaseLogin.swift in Sources */,
+				3FDC1EFA1DE12BE10073271A /* PlacesAnnotation.swift in Sources */,
 				3F7671AC1DE0A72400B52A71 /* CrumbsCollectionViewController.swift in Sources */,
 				3F8DD3001DE0B27400EE2C6E /* CrumbCell.swift in Sources */,
 				3F7671B01DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift in Sources */,
