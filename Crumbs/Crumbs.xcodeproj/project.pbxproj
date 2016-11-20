@@ -17,6 +17,8 @@
 		3F8DD2FC1DE0AF1C00EE2C6E /* Crumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DD2FB1DE0AF1C00EE2C6E /* Crumb.swift */; };
 		3F8DD2FE1DE0AF6A00EE2C6E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DD2FD1DE0AF6A00EE2C6E /* Location.swift */; };
 		3F8DD3001DE0B27400EE2C6E /* CrumbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8DD2FF1DE0B27400EE2C6E /* CrumbCell.swift */; };
+		3FDC1EF51DE11D540073271A /* CustomAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC1EF41DE11D540073271A /* CustomAnnotationView.xib */; };
+		3FDC1EF71DE120F80073271A /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC1EF61DE120F80073271A /* CustomAnnotationView.swift */; };
 		90F660CF1DE0DC0400981B8A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F660CE1DE0DC0400981B8A /* SearchViewController.swift */; };
 		C32B15711DE0DF130056513D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32B15701DE0DF130056513D /* Main.storyboard */; };
 		C35EEF721DE0ABDC0057C059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EEF711DE0ABDC0057C059 /* LoginViewController.swift */; };
@@ -39,6 +41,8 @@
 		3F8DD2FB1DE0AF1C00EE2C6E /* Crumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crumb.swift; sourceTree = "<group>"; };
 		3F8DD2FD1DE0AF6A00EE2C6E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		3F8DD2FF1DE0B27400EE2C6E /* CrumbCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbCell.swift; sourceTree = "<group>"; };
+		3FDC1EF41DE11D540073271A /* CustomAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAnnotationView.xib; sourceTree = "<group>"; };
+		3FDC1EF61DE120F80073271A /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crumbs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crumbs/Pods-Crumbs.debug.xcconfig"; sourceTree = "<group>"; };
 		90F660CE1DE0DC0400981B8A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C32B15701DE0DF130056513D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		3F466F381DE09A0500C1545D /* Crumbs */ = {
 			isa = PBXGroup;
 			children = (
+				3FDC1EF11DE11C9E0073271A /* CustomCallout */,
 				3F8DD2FF1DE0B27400EE2C6E /* CrumbCell.swift */,
 				3F7671B21DE0A7A000B52A71 /* Models */,
 				3F7671AE1DE0A75400B52A71 /* ViewControllers */,
@@ -137,6 +142,15 @@
 				3F8DD2FD1DE0AF6A00EE2C6E /* Location.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3FDC1EF11DE11C9E0073271A /* CustomCallout */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC1EF41DE11D540073271A /* CustomAnnotationView.xib */,
+				3FDC1EF61DE120F80073271A /* CustomAnnotationView.swift */,
+			);
+			name = CustomCallout;
 			sourceTree = "<group>";
 		};
 		A07DFD085DF9B8EC85C675A7 /* Pods */ = {
@@ -217,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F466F441DE09A0500C1545D /* LaunchScreen.storyboard in Resources */,
+				3FDC1EF51DE11D540073271A /* CustomAnnotationView.xib in Resources */,
 				C32B15711DE0DF130056513D /* Main.storyboard in Resources */,
 				3F466F411DE09A0500C1545D /* Assets.xcassets in Resources */,
 				C35EEF741DE0BA3A0057C059 /* GoogleService-Info.plist in Resources */,
@@ -288,6 +303,7 @@
 				3F8DD3001DE0B27400EE2C6E /* CrumbCell.swift in Sources */,
 				3F7671B01DE0A77A00B52A71 /* ShowCrumbDetailViewController.swift in Sources */,
 				3F7671B61DE0A8C500B52A71 /* CreateCrumbViewController.swift in Sources */,
+				3FDC1EF71DE120F80073271A /* CustomAnnotationView.swift in Sources */,
 				3F466F3A1DE09A0500C1545D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
