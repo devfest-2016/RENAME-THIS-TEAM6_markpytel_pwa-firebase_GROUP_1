@@ -16,12 +16,21 @@ class CrumbsCollectionViewController: UICollectionViewController {
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     fileprivate let itemsPerRow: CGFloat = 1
     
+    
     let ref = FIRDatabase.database().reference(withPath: "crumbs")
     var crumbs: [Crumb] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let orangeColor = hexStringToUIColor(hex: "#ffa907")
+        
+        tabBarController?.tabBar.tintColor = UIColor.white
+        tabBarController?.tabBar.barTintColor = orangeColor
+        //tabBarController?.tabBar.backgroundColor = orangeColor
+        tabBarController?.tabBar.isTranslucent = false
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
     }
@@ -77,10 +86,13 @@ class CrumbsCollectionViewController: UICollectionViewController {
         return cell
         
     }
+    
+ 
 
 
 
 }
+
 
 extension CrumbsCollectionViewController: UICollectionViewDelegateFlowLayout {
     //1
@@ -108,5 +120,30 @@ extension CrumbsCollectionViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.characters.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
 }
+
+
 
