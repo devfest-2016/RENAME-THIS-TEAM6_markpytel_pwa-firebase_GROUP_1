@@ -211,7 +211,7 @@
 				TargetAttributes = {
 					3F466F351DE09A0500C1545D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 79TR88QV2P;
+						DevelopmentTeam = H2562XJSGY;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -434,7 +434,7 @@
 			baseConfigurationReference = 624ED402FC6764C73A2D9963 /* Pods-Crumbs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 79TR88QV2P;
+				DEVELOPMENT_TEAM = H2562XJSGY;
 				INFOPLIST_FILE = Crumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NY3Apps.Crumbs;
@@ -449,7 +449,7 @@
 			baseConfigurationReference = F9712C3CE599E2596C833223 /* Pods-Crumbs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 79TR88QV2P;
+				DEVELOPMENT_TEAM = H2562XJSGY;
 				INFOPLIST_FILE = Crumbs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NY3Apps.Crumbs;

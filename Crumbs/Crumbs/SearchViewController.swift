@@ -68,6 +68,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             
             self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
             self.mapView.centerCoordinate = self.pointAnnotation.coordinate
+            print("Adding annotations!!!")
             self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
     }

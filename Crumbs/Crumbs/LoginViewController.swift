@@ -32,6 +32,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
        
     }
     
@@ -135,7 +143,22 @@ class LoginViewController: UIViewController {
         })
     }
     
+    
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        print("ISIDKJFKSJDHFKDSJHFKJSDHKHFKJSDHFKJ")
+//        emailTextField.resignFirstResponder()
+//        passwordTextField.resignFirstResponder()
+//    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 }
 
 

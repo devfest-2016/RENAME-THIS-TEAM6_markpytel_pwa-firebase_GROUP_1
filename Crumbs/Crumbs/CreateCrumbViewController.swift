@@ -44,6 +44,12 @@ class CreateCrumbViewController: UIViewController {
         // Do any additional setup after loading the view.
         let orangeColor = hexStringToUIColor(hex: "#ffa907")
         navigationController?.navigationItem.leftBarButtonItem?.tintColor = orangeColor
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
     
 
@@ -380,5 +386,13 @@ extension CreateCrumbViewController: UISearchBarDelegate {
             self.mapItemList.append(MKMapItem(placemark: placemark))
             self.saveLocationToList(annotation: self.pointAnnotation)
         }
+    }
+}
+
+extension CreateCrumbViewController {
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
