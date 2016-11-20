@@ -77,6 +77,26 @@ class ShowCrumbDetailViewController: UIViewController, MKMapViewDelegate {
         mapView.setRegion(region, animated: true)
         mapView.addAnnotations(annotations)
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationReuseId = "Place"
+        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationReuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationReuseId)
+        } else {
+            anView?.annotation = annotation
+        }
+        let pinImage = UIImage(named: "crumb")
+        let size = CGSize(width: 30, height: 30)
+        UIGraphicsBeginImageContext(size)
+        pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        anView?.image = resizedImage
+        anView?.backgroundColor = UIColor.clear
+        anView?.canShowCallout = false
+        return anView
+    }
    
 }
 

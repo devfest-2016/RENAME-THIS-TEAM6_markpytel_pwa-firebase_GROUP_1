@@ -19,9 +19,15 @@ class CrumbsCollectionViewController: UICollectionViewController {
     
     let ref = FIRDatabase.database().reference(withPath: "crumbs")
     var crumbs: [Crumb] = []
+    let cityImageDict: [String: UIImage] = ["New York": UIImage(named: "nyc")!,
+                                            "Salford": UIImage(named: "manchester")!,
+                                            "San Francisco": UIImage(named: "sf")!,
+                                            "Seoul": UIImage(named: "seoul")!,
+                                            "Shanghai": UIImage(named: "shanghai")!]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         let orangeColor = hexStringToUIColor(hex: "#ffa907")
         
@@ -33,12 +39,13 @@ class CrumbsCollectionViewController: UICollectionViewController {
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
         ref.observe(.value, with: { snapshot in
             var newCrumbs: [Crumb] = []
-            print(snapshot.value)
             for item in snapshot.children {
                 let crumb = Crumb(snapshot: item as! FIRDataSnapshot)
                 newCrumbs.append(crumb)
@@ -81,8 +88,14 @@ class CrumbsCollectionViewController: UICollectionViewController {
         
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)) as! CrumbCell
         cell.crumbNameLabel.text = crumbs[indexPath.row].name
-        cell.crumbCityLabel.text = crumbs[indexPath.row].city
-        cell.backgroundColor = UIColor.cyan
+        let cityName = crumbs[indexPath.row].city
+        cell.crumbCityLabel.text = cityName
+        cell.buttonStackView.isHidden = true
+        let imageView = UIImageView(image: cityImageDict[cityName]!)
+        imageView.contentMode = .scaleAspectFit
+        cell.backgroundView = imageView
+//        cell.cityImage.image = cityImageDict[cityName]
+//        cell.backgroundColor = UIColor.cyan
         return cell
         
     }

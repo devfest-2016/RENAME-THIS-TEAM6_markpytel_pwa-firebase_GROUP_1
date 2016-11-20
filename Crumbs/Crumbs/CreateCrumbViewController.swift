@@ -37,17 +37,16 @@ class CreateCrumbViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         placeInLineCounter = 1
         initGestures()
         setupLocationManager()
-        //activityIndicator.isHidden = true
         mapView.delegate = self
         // Do any additional setup after loading the view.
         let orangeColor = hexStringToUIColor(hex: "#ffa907")
         navigationController?.navigationItem.leftBarButtonItem?.tintColor = orangeColor
     }
     
+
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
@@ -70,6 +69,11 @@ class CreateCrumbViewController: UIViewController {
         )
     }
     
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -160,7 +164,7 @@ extension CreateCrumbViewController: CLLocationManagerDelegate {
     
     func centerMapOnCurrentLocation(location: CLLocation) {
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let span = MKCoordinateSpanMake(0.02, 0.02) //arbitrary span (about 2X2 miles i think)
+        let span = MKCoordinateSpanMake(0.1, 0.1) //arbitrary span (about 2X2 miles i think)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
     }
@@ -301,6 +305,28 @@ extension CreateCrumbViewController: MKMapViewDelegate {
         
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let annotationReuseId = "Place"
+        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationReuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationReuseId)
+        } else {
+            anView?.annotation = annotation
+        }
+        let pinImage = UIImage(named: "crumb")
+        let size = CGSize(width: 30, height: 30)
+        UIGraphicsBeginImageContext(size)
+        pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        anView?.image = resizedImage
+        anView?.backgroundColor = UIColor.clear
+        anView?.canShowCallout = false
+        return anView
+    }
 }
 
 // MARK: - Gestures

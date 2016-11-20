@@ -13,4 +13,7 @@ class CrumbCell: UICollectionViewCell {
     @IBOutlet weak var crumbNameLabel: UILabel!
     @IBOutlet weak var crumbCityLabel: UILabel!
     
+    @IBOutlet weak var cityImage: UIImageView!
+    
+    @IBOutlet weak var buttonStackView: UIStackView!
 }

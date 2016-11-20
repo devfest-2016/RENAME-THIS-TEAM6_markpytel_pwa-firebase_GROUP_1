@@ -17,10 +17,11 @@ class LoginViewController: UIViewController {
     
     let store = DataStore.sharedInstance
     
-    @IBAction func loginButton(_ sender: Any) {
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         handleSignIn(email: email, password: password)
     }
+   
     
     @IBAction func createAccountButton(_ sender: Any) {
         createAccountButtonTapped()
