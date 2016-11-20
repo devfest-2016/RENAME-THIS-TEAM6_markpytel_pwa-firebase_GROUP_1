@@ -100,12 +100,12 @@
             </objects>
             <point key="canvasLocation" x="188" y="27"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Trails-->
         <scene sceneID="vzS-Wb-ZXy">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QEm-7P-NgP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="xU4-4h-b6p"/>
+                    <navigationItem key="navigationItem" title="Trails" id="xU4-4h-b6p"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xvd-h6-Z5q">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -37,13 +37,15 @@ class CreateCrumbViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         placeInLineCounter = 1
         initGestures()
         setupLocationManager()
-        //activityIndicator.isHidden = true
         mapView.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

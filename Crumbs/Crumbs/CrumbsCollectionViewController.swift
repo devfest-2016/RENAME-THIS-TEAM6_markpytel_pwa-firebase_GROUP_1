@@ -21,12 +21,10 @@ class CrumbsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
         ref.observe(.value, with: { snapshot in
             var newCrumbs: [Crumb] = []
             for item in snapshot.children {
