@@ -18,6 +18,11 @@ class CrumbsCollectionViewController: UICollectionViewController {
     
     let ref = FIRDatabase.database().reference(withPath: "crumbs")
     var crumbs: [Crumb] = []
+    let cityImageDict: [String: UIImage] = ["New York": UIImage(named: "New york")!,
+                                            "Manchester": UIImage(named: "Manchester")!,
+                                            "San Francisco": UIImage(named: "san francisco")!,
+                                            "Seoul": UIImage(named: "Seoul")!,
+                                            "Shanghai": UIImage(named: "shanghai")!]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +74,9 @@ class CrumbsCollectionViewController: UICollectionViewController {
         
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)) as! CrumbCell
         cell.crumbNameLabel.text = crumbs[indexPath.row].name
-        cell.crumbCityLabel.text = crumbs[indexPath.row].city
+        let cityName = crumbs[indexPath.row].city
+        cell.crumbCityLabel.text = cityName
+        cell.cityImage.image = cityImageDict[cityName]
         cell.backgroundColor = UIColor.cyan
         return cell
         
