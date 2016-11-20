@@ -137,7 +137,7 @@ extension CreateCrumbViewController: CLLocationManagerDelegate {
     
     func centerMapOnCurrentLocation(location: CLLocation) {
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let span = MKCoordinateSpanMake(0.02, 0.02) //arbitrary span (about 2X2 miles i think)
+        let span = MKCoordinateSpanMake(0.1, 0.1) //arbitrary span (about 2X2 miles i think)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
     }
