@@ -231,13 +231,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="birds" systemItem="mostViewed" id="gnL-D7-J63"/>
+                    <tabBarItem key="tabBarItem" selectedImage="birds" systemItem="favorites" id="gnL-D7-J63"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-DW-b93" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2687" y="841"/>
         </scene>
-        <!--Create Crumb View Controller-->
+        <!--Create-->
         <scene sceneID="RzJ-Tf-Ouk">
             <objects>
                 <viewController id="uEx-SX-aRB" customClass="CreateCrumbViewController" customModule="Crumbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +323,7 @@
                             <constraint firstItem="9y4-KN-43a" firstAttribute="top" secondItem="HKP-MS-GsM" secondAttribute="bottom" id="Ofj-6W-jhQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Daq-Ss-xRd"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="map" id="Daq-Ss-xRd"/>
                     <connections>
                         <outlet property="mapView" destination="9y4-KN-43a" id="EmZ-SF-5at"/>
                     </connections>
@@ -332,7 +332,7 @@
             </objects>
             <point key="canvasLocation" x="3083" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--Route-->
         <scene sceneID="2Wn-N8-hss">
             <objects>
                 <viewController id="IhY-Mb-OVn" sceneMemberID="viewController">
@@ -345,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="8JF-wp-nx8"/>
+                    <tabBarItem key="tabBarItem" title="Route" image="newroutwhite" id="8JF-wp-nx8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yC-rx-4do" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,5 +374,7 @@
     <resources>
         <image name="C" width="5608" height="2095"/>
         <image name="birds" width="300" height="300"/>
+        <image name="map" width="67" height="31"/>
+        <image name="newroutwhite" width="83" height="39"/>
     </resources>
 </document>
