@@ -10,5 +10,5 @@ target 'Crumbs' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
-  
+  pod 'SwiftGifOrigin', '~> 1.6.1' 
 end

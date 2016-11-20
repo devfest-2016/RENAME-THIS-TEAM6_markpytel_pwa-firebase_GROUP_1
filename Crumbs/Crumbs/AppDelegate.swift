@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import SwiftGifOrigin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var customizedLaunchScreenView: UIView?
     
     override init() {
         super.init()
@@ -22,6 +24,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Override point for customization after application launch.
+        //application.statusBarHidden = true
+        application.setStatusBarHidden(true, with: .none)
+        // customized launch screen
+        if let window = self.window {
+            self.customizedLaunchScreenView = UIView(frame: window.bounds)
+            self.customizedLaunchScreenView?.backgroundColor = UIColor.green
+            
+            self.window?.makeKeyAndVisible()
+            let myGif = UIImage.gif(name: "crumb")
+            let gifView = UIImageView(frame: CGRect(x: window.center.x, y: window.center.y, width: 300, height: 300))
+            gifView.image = myGif
+            customizedLaunchScreenView?.addSubview(gifView)
+            self.window?.addSubview(self.customizedLaunchScreenView!)
+            self.window?.bringSubview(toFront: self.customizedLaunchScreenView!)
+            UIView.animate(withDuration: 1, delay: 2, options: .curveEaseOut,
+                                       animations: { () -> Void in
+                                        self.customizedLaunchScreenView?.alpha = 0 },
+                                       completion: { _ in
+                                        self.customizedLaunchScreenView?.removeFromSuperview() })
+        }
+        
         if FIRAuth.auth()?.currentUser?.uid == nil {
             //present login view controller
         }  else {
