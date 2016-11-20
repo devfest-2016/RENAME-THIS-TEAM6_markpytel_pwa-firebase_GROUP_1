@@ -59,10 +59,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crumbs logo" translatesAutoresizingMaskIntoConstraints="NO" id="pZH-cl-7wA">
                                 <rect key="frame" x="120" y="327" width="133" height="133"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="birds" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-U7-6SB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="brandnewbirds" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-U7-6SB">
                                 <rect key="frame" x="163" y="190" width="117" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="bp6-U7-6SB" secondAttribute="height" multiplier="117:110" id="Yac-d1-ilD"/>
+                                    <constraint firstAttribute="width" secondItem="bp6-U7-6SB" secondAttribute="height" multiplier="117:95" id="Yac-d1-ilD"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="C logo" translatesAutoresizingMaskIntoConstraints="NO" id="4xB-D2-Wse">
@@ -72,9 +72,9 @@
                         <color key="backgroundColor" red="0.93463701009750366" green="0.77912956476211548" blue="0.49095660448074341" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4xB-D2-Wse" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-10" id="4lx-o5-P5P"/>
-                            <constraint firstItem="bp6-U7-6SB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="30" id="55a-Jd-rny"/>
+                            <constraint firstItem="bp6-U7-6SB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="25" id="55a-Jd-rny"/>
                             <constraint firstItem="9bh-z9-cSO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6DO-Zk-3Ec"/>
-                            <constraint firstItem="bp6-U7-6SB" firstAttribute="centerY" secondItem="4xB-D2-Wse" secondAttribute="centerY" constant="5" id="7Gg-ow-mbm"/>
+                            <constraint firstItem="bp6-U7-6SB" firstAttribute="centerY" secondItem="4xB-D2-Wse" secondAttribute="centerY" constant="-10" id="7Gg-ow-mbm"/>
                             <constraint firstItem="PyO-8Q-fqz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9jc-Dx-oKX"/>
                             <constraint firstItem="bp6-U7-6SB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.35" id="EL1-i4-gU4"/>
                             <constraint firstItem="pZH-cl-7wA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NWa-CO-2r2"/>
@@ -395,6 +395,7 @@
         <image name="C" width="5608" height="2095"/>
         <image name="C logo" width="1194" height="1082"/>
         <image name="birds" width="300" height="300"/>
+        <image name="brandnewbirds" width="276" height="262"/>
         <image name="crumbs logo" width="300" height="300"/>
         <image name="map" width="67" height="31"/>
         <image name="newroutwhite" width="83" height="39"/>
