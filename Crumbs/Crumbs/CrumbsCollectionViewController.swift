@@ -29,7 +29,6 @@ class CrumbsCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         ref.observe(.value, with: { snapshot in
             var newCrumbs: [Crumb] = []
-            print(snapshot.value)
             for item in snapshot.children {
                 let crumb = Crumb(snapshot: item as! FIRDataSnapshot)
                 newCrumbs.append(crumb)
